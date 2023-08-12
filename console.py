@@ -32,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
 
     def precmd(self, line):
         """
-        reclaims an instructions to execute 
+        reclaims an instructions to execute
         before any line is executed.
         """
         if not line:
