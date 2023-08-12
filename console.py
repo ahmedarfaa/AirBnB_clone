@@ -33,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
     def precmd(self, line):
         """
         reclaims an instructions to execute
-        before any line is executed.
+        before any line is executed or translated to a command
         """
         if not line:
             return '\n'
@@ -48,8 +48,8 @@ class HBNBCommand(cmd.Cmd):
             if match_tuple[1] == "count":
                 instance_objs = storage.all()
                 print(len([
-                    v for _, v in instance_objs.items()
-                    if type(v).__name__ == match_tuple[0]]))
+                    x for _, x in instance_objs.items()
+                    if type(x).__name__ == match_tuple[0]]))
                 return "\n"
             return "{} {}".format(match_tuple[1], match_tuple[0])
         else:
